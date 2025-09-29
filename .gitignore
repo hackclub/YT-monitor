@@ -1,4 +1,4 @@
-# Environment files
+# Ignore everything environmental except the example
 .env
 .env.local
 .env.*

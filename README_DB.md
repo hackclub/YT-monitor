@@ -1,6 +1,6 @@
 Database setup instructions
 
-This project uses PostgreSQL. The scraper expects a table named `youtube_videos` with the columns:
+Uses PostgreSQL. The scraper expects a table named `youtube_videos` with the columns:
 
 - video_id (primary key)
 - title
@@ -9,7 +9,7 @@ This project uses PostgreSQL. The scraper expects a table named `youtube_videos`
 - raw_json (jsonb)
 - created_at (timestamp with timezone)
 
-You can create the table manually or run the included script `init_db.py` which will create it if missing.
+You can create the table manually but i included a script `init_db.py` which will create it for you if it is missing.
 
 Local (docker-compose) quick setup
 

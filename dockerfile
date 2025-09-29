@@ -11,11 +11,18 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first (better caching)
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# Copy app
-COPY main.py .
+# Copy all the python code in
+COPY *.py /app/
 
-# Run script the main script using python (obvs)
-CMD ["python", "main.py"]
+# Add entrypoint script that will run DB init then start the web server
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+# Expose default web port
+EXPOSE 5000
+
+# Entrypoint runs DB init (idempotent) and then starts the Flask app
+ENTRYPOINT ["/app/entrypoint.sh"]
