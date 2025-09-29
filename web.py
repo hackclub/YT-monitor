@@ -25,13 +25,13 @@ watch live
 swipe
 </marquee>
 
-For the next 2 weeks, hijack your algorithem and flip the script...
+For the next 2 weeks, hijack your algorithm and flip the script...
 
 - instead of consuming, build something yourself
 - post YT shorts of your progress as you track your time working
 - earn prizes once you ship your project
 
-<a href="SLACK_CHANNEL">Join now</a>
+<a href="https://hackclub.slack.com/archives/C09HETY2STD">Join now</a>
 
 
 <h3>The shop</h3>
