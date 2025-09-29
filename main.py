@@ -3,7 +3,7 @@ import psycopg2#for PostgreSQL connection
 from googleapiclient.discovery import build#for YouTube API
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(override=True)
 
 API_KEY = os.getenv("YOUTUBE_API_KEY")
 HASHTAG = "programming"
