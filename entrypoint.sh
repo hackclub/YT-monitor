@@ -14,5 +14,11 @@ else
   echo "DATABASE_URL not set; skipping DB init"
 fi
 
-# Start the web app
+# If arguments provided, run them instead of default web server
+if [ $# -gt 0 ]; then
+  echo "Running: $@"
+  exec "$@"
+fi
+
+# Default: start the web app
 exec python web.py

@@ -2,11 +2,12 @@ import os#for environment variables
 import psycopg2#for PostgreSQL connection
 from googleapiclient.discovery import build#for YouTube API
 from dotenv import load_dotenv
+import json#for proper JSON serialization
 
 load_dotenv(override=True)
 
 API_KEY = os.getenv("YOUTUBE_API_KEY")
-HASHTAG = "programming"
+HASHTAG = "programming"  # temporary for testing
 DB_CONN = os.getenv("DATABASE_URL")
 
 youtube = build("youtube", "v3", developerKey=API_KEY)
@@ -36,7 +37,7 @@ def save_to_db(videos):
             INSERT INTO youtube_videos (video_id, title, channel, published_at, raw_json)
             VALUES (%s, %s, %s, %s, %s)
             ON CONFLICT (video_id) DO NOTHING;
-        """, (video_id, title, channel, published, str(v)))
+        """, (video_id, title, channel, published, json.dumps(v)))
 
     conn.commit()
     cur.close()
