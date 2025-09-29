@@ -1,0 +1,12 @@
+# Environment files
+.env
+.env.local
+.env.*
+!.env.example   
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Docker volumes
+db_data/
