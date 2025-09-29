@@ -43,6 +43,6 @@ def save_to_db(videos):
     conn.close()
 
 if __name__ == "__main__":
-    videos = fetch_videos(HASHTAG, max_results=5)
+    videos = fetch_videos(HASHTAG, max_results=10)
     save_to_db(videos)
     print(f"Inserted {len(videos)} videos into DB.")
