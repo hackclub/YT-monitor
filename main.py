@@ -7,7 +7,7 @@ import json#for proper JSON serialization
 load_dotenv(override=True)
 
 API_KEY = os.getenv("YOUTUBE_API_KEY")
-HASHTAG = "programming"  # temporary for testing
+HASHTAG = "Hijackhackclub"  
 DB_CONN = os.getenv("DATABASE_URL")
 
 youtube = build("youtube", "v3", developerKey=API_KEY)
