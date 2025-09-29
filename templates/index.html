@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hijack - hack club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="center-content">
+        <h1>CONSUME</h1>
+        <h1>CONSUME</h1>
+        <h1>CONSUME</h1>
+    </div> 
+    <div class="top-content">
+        <p>everyone is pushing you to </p>
+    </div>
+    <div class="top2-content">
+        <marquee direction="left" scrollamount="6" scrolldelay="0">
+            consume | doomscroll | tune in | watch live | swipe |
+            consume | doomscroll | tune in | watch live | swipe |
+            consume | doomscroll | tune in | watch live | swipe |
+            consume | doomscroll | tune in | watch live | swipe |
+        </marquee>
+        <div class="arrow-mask"></div>
+    </div>
+    <div class="info-content">
+        <h2>Hack Club comes to you with a challenge</h2>
+        <p>In this modern age, everyone is pushing you to consume, doomscroll, tune im, watch live, swipe, and repeat.</p>
+        <p>For the next 2 weeks, hijack your algorithm and flip the script... - instead of consuming, build something yourself - post YT shorts of your progress as you track your time working - earn prizes once you ship your project.</p>
+        <a class="btn" href="https://hackclub.com/slack">join the talk</a>
+        <div class="divider"></div>
+        <h2>The Shop</h2>
+        <p>TBD - (this will be pre-authed card grants. not sure what the bounds of these should be)</p>
+        <div class="divider"></div>
+        <h2>What to build</h2>
+        <p>Build whatever you want. Feeling uninspired? scroll through some of these ideas:</p>
+        <ul>
+            <li>a vtuber!</li>
+            <li>slack bot to share your most recent videos</li>
+            <li>a website that streams to YT for you with your own interface</li>
+            <li>build a hackatime extension with the bounty program</li>
+        </ul>
+        <p>you can also check out what others are building:</p>
+    </div>
+
+    <ul class="video-list">
+    {% for v in videos %}
+      <li class="video-item"><a class="video-link" href="https://www.youtube.com/watch?v={{ v.video_id }}" target="_blank" rel="noopener noreferrer">{{ v.title }}</a> <span class="by">by</span> <span class="channel">{{ v.channel }}</span></li>
+    {% else %}
+      <li class="empty">No videos yet. Check back soon.</li>
+    {% endfor %}
+    </ul>
+  </section>
+  <footer class="site-footer">
+    <p class="fine-print">Generated at {{ datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S') }} UTC • <a href="https://github.com/hackclub/YT-monitor" target="_blank" rel="noopener noreferrer">Source</a></p>
+  </footer>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

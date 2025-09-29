@@ -17,6 +17,10 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 # Copy all the python code in
 COPY *.py /app/
 
+# Copy templates & static assets
+COPY templates /app/templates
+COPY static /app/static
+
 # Add entrypoint script that will run DB init then start the web server
 COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
